@@ -4,8 +4,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import { Tabs, Tab } from 'material-ui/Tabs';
 import FlatButton from 'material-ui/FlatButton';
+
+const imageStyles = {
+  width: '95%',
+  margin: '0 auto'
+};
 
 const forVarLoopScope = () => {
   for (var i = 0; i < 5; i++) {
@@ -20,14 +25,17 @@ const forLetLoopScope = () => {
 };
 
 const LetVsVar = () => (
-  <div style={{height: '100%'}}>
+  <div style={{ height: '100%' }}>
     <Tabs>
       <Tab label="Let vs Var">
-        <div style={{ height: '100vh'}}>
+        <div style={{ height: '100vh' }}>
           <h1 style={{ textAlign: 'center' }}>Let vs Var</h1>
           <div style={{ margin: '0 auto' }}>
             <ul style={{ listStyle: 'none' }}>
-              <li>Bindings using var are Function scoped whereas bindings using let are block scoped</li>
+              <li>
+                Bindings using var are Function scoped whereas bindings using
+                let are block scoped
+              </li>
               <li>var is hoisted</li>
               <li>Loop bindings</li>
               <li>What about const?</li>
@@ -43,24 +51,28 @@ const LetVsVar = () => (
             flexDirection: 'column',
             alignItems: 'center',
             marginBottom: '100px'
-      }}
-    >
+          }}
+        >
           <h2>Let vs Var / Hoisting and Scoping</h2>
-          <img src="/img/hoisting.png" alt="Hoisting and Scoping" />
+          <img
+            src="/img/hoisting.png"
+            alt="Hoisting and Scoping"
+            style={imageStyles}
+          />
           <img
             src="/img/hoistingWithVisual.png"
             alt="Hoisting"
-            style={{ marginTop: '25px' }}
+            style={{ ...imageStyles, marginTop: '25px' }}
           />
           <img
             src="/img/hoistingWithLet.png"
             alt="Hoisting"
-            style={{ marginTop: '25px' }}
+            style={{ ...imageStyles, marginTop: '25px' }}
           />
           <img
             src="/img/letBlockScope.png"
             alt="Hoisting"
-            style={{ marginTop: '25px' }}
+            style={{ ...imageStyles, marginTop: '25px' }}
           />
         </div>
       </Tab>
@@ -75,15 +87,29 @@ const LetVsVar = () => (
           }}
         >
           <h2>Let vs Var / Let Within Loops</h2>
-          <img src="/img/varForLoopScope.png" alt="ForLoopScoping" />
-          <FlatButton backgroundColor="#fff" onClick={forVarLoopScope} label="Run Code" style={{ marginTop: '25px' }} />
+          <img
+            src="/img/varForLoopScope.png"
+            alt="ForLoopScoping"
+            style={imageStyles}
+          />
+          <FlatButton
+            backgroundColor="#fff"
+            onClick={forVarLoopScope}
+            label="Run Code"
+            style={{ marginTop: '25px' }}
+          />
 
           <img
-            style={{ marginTop: '25px' }}
+            style={{ ...imageStyles, marginTop: '25px' }}
             src="/img/letForLoopScope.png"
             alt="ForLoopScoping"
           />
-          <FlatButton backgroundColor="#fff" onClick={forLetLoopScope} label="Run Code" style={{ marginTop: '25px' }} />
+          <FlatButton
+            backgroundColor="#fff"
+            onClick={forLetLoopScope}
+            label="Run Code"
+            style={{ marginTop: '25px' }}
+          />
         </div>
       </Tab>
       <Tab label="const">
@@ -97,9 +123,9 @@ const LetVsVar = () => (
         >
           <h2>Let vs Var / const</h2>
           <img src="/img/const.png" alt="ForLoopScoping" />
-          <h3 style={{marginTop: '25px'}}>Cannot Reassign !== Immutable</h3>
+          <h3 style={{ marginTop: '25px' }}>Cannot Reassign !== Immutable</h3>
           <img
-            style={{ marginTop: '15px' }}
+            style={{ ...imageStyles, marginTop: '15px' }}
             src="/img/mutable.png"
             alt="Mutable"
           />
@@ -116,15 +142,22 @@ const LetVsVar = () => (
           }}
         >
           <h1>Redeclaration</h1>
-          <img src="/img/redeclarationError.png" alt="redeclarationError" />
+          <img
+            src="/img/redeclarationError.png"
+            alt="redeclarationError"
+            style={imageStyles}
+          />
 
           <img
-            style={{ marginTop: '25px' }}
+            style={{ ...imageStyles, marginTop: '25px' }}
             src="/img/redeclarationNoError.png"
             alt="redeclarationNoError"
           />
         </div>
-        <Link to="/arrowFunctions" style={{ color: '#F1F7EE', textAlign: 'right' }}>
+        <Link
+          to="/arrowFunctions"
+          style={{ color: '#F1F7EE', textAlign: 'right' }}
+        >
           <h4 style={{ marginRight: '15px' }}>Next: Arrow Functions</h4>
         </Link>
       </Tab>
