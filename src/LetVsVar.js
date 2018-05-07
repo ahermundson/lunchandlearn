@@ -151,7 +151,7 @@ const LetVsVar = props => {
               flexDirection: 'column',
               alignItems: 'center',
               marginBottom: '25px',
-              height: '100vh'
+              height: '1200px'
             }}
           >
             <h2>Let vs Var / const</h2>
