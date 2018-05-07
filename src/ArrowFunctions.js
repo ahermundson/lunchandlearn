@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import FlatButton from 'material-ui/FlatButton';
+import Arrow from './Arrow';
 
 const imageStyles = {
   width: '95%',
@@ -45,7 +46,7 @@ const es5Person = new Person();
 
 const es6Person = new ArrowFunctionPerson();
 
-const ArrowFunctions = () => (
+const ArrowFunctions = props => (
   <div style={{ height: '100%' }}>
     <Tabs>
       <Tab label="Syntax">
@@ -64,13 +65,23 @@ const ArrowFunctions = () => (
             alt="ES5FuncDeclarations"
             style={imageStyles}
           />
-
-          <h4 style={{ marginTop: '25px' }}>Arrow Function Sytax</h4>
-          <img
-            src="/img/arrowFunctionDeclaration.png"
-            alt="ES5FuncDeclarations"
-            style={imageStyles}
-          />
+          {!props.arrowSyntaxTwo && (
+            <Arrow
+              onArrowClick={props.showNext}
+              stateName="arrowSyntaxTwo"
+              style={{ color: 'white', marginTop: '10px' }}
+            />
+          )}
+          {props.arrowSyntaxTwo && (
+            <div style={{ textAlign: 'center', margin: '0 auto' }}>
+              <h4 style={{ marginTop: '25px' }}>Arrow Function Sytax</h4>
+              <img
+                src="/img/arrowFunctionDeclaration.png"
+                alt="ES5FuncDeclarations"
+                style={imageStyles}
+              />
+            </div>
+          )}
         </div>
       </Tab>
       <Tab label="Arrow Function w/ Array Methods">
