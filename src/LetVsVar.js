@@ -52,7 +52,7 @@ const LetVsVar = props => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              height: '1000px'
+              height: '1500px'
             }}
           >
             <h2>Let vs Var / Hoisting and Scoping</h2>
