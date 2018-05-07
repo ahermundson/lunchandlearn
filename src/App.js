@@ -5,6 +5,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Landing from './Landing';
 import LetVsVar from './LetVsVar';
 import ArrowFunctions from './ArrowFunctions';
+import RestSpreadOperartor from './RestSpreadOperator';
 import './App.css';
 
 const muiTheme = getMuiTheme({
@@ -19,6 +20,32 @@ const muiTheme = getMuiTheme({
 });
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      hoistingTwo: false,
+      hoistingThree: false,
+      hoistingFour: false,
+      constTwo: false,
+      redeclarationTwo: false,
+      arrowSyntaxTwo: false,
+      restOperaterTwo: false,
+      restOperatorFour: false,
+      restOperatorFive: false,
+      restOperatorSix: false,
+      restOperatorSeven: false,
+      spreadOperatorTwo: false
+    };
+    this.showNext = this.showNext.bind(this);
+  }
+
+  showNext(stateName) {
+    console.log(stateName);
+    this.setState({
+      [stateName]: true
+    });
+  }
+
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
@@ -29,8 +56,43 @@ class App extends Component {
           <HashRouter>
             <div>
               <Route exact path="/" component={Landing} />
-              <Route path="/letvsvar" component={LetVsVar} />
-              <Route path="/arrowFunctions" component={ArrowFunctions} />
+              <Route
+                path="/letvsvar"
+                render={() => (
+                  <LetVsVar
+                    showNext={this.showNext}
+                    hoistingTwo={this.state.hoistingTwo}
+                    hoistingThree={this.state.hoistingThree}
+                    hoistingFour={this.state.hoistingFour}
+                    constTwo={this.state.constTwo}
+                    redeclarationTwo={this.state.redeclarationTwo}
+                  />
+                )}
+              />
+              <Route
+                path="/arrowFunctions"
+                render={() => (
+                  <ArrowFunctions
+                    showNext={this.showNext}
+                    arrowSyntaxTwo={this.state.arrowSyntaxTwo}
+                  />
+                )}
+              />
+              <Route
+                path="/restSpreadOperator"
+                render={() => (
+                  <RestSpreadOperartor
+                    showNext={this.showNext}
+                    restOperatorTwo={this.state.restOperatorTwo}
+                    restOperatorThree={this.state.restOperatorThree}
+                    restOperatorFour={this.state.restOperatorFour}
+                    restOperatorFive={this.state.restOperatorFive}
+                    restOperatorSix={this.state.restOperatorSix}
+                    restOperatorSeven={this.state.restOperatorSeven}
+                    spreadOperatorTwo={this.state.spreadOperatorTwo}
+                  />
+                )}
+              />
             </div>
           </HashRouter>
         </div>
