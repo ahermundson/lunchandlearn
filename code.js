@@ -118,3 +118,13 @@ const htmlString = templateTag`
         <h1>${person.firstName}</h1>
     </div>
 `;
+
+function styled(strings, ...values) {
+
+}
+
+const styledDiv = styled`
+    color: Linen,
+    font-family: 'Roboto',
+    border: 1px solid pink
+`;
