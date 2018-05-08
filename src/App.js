@@ -6,6 +6,7 @@ import Landing from './Landing';
 import LetVsVar from './LetVsVar';
 import ArrowFunctions from './ArrowFunctions';
 import RestSpreadOperartor from './RestSpreadOperator';
+import TemplateLiterals from './TemplateLiterals';
 import './App.css';
 
 const muiTheme = getMuiTheme({
@@ -34,7 +35,8 @@ class App extends Component {
       restOperatorFive: false,
       restOperatorSix: false,
       restOperatorSeven: false,
-      spreadOperatorTwo: false
+      spreadOperatorTwo: false,
+      spreadOperatorThree: false
     };
     this.showNext = this.showNext.bind(this);
   }
@@ -90,8 +92,13 @@ class App extends Component {
                     restOperatorSix={this.state.restOperatorSix}
                     restOperatorSeven={this.state.restOperatorSeven}
                     spreadOperatorTwo={this.state.spreadOperatorTwo}
+                    spreadOperatorThree={this.state.spreadOperatorThree}
                   />
                 )}
+              />
+              <Route
+                path="/templateLiterals"
+                render={() => <TemplateLiterals />}
               />
             </div>
           </HashRouter>

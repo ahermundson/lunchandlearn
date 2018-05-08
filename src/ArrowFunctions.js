@@ -88,17 +88,18 @@ const ArrowFunctions = props => (
         <div
           style={{
             marginTop: '10px',
+            marginBottom: '25px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100vh'
+            height: '100%'
           }}
         >
           <h4 style={{ marginTop: '25px' }}>Arrow Function w/ Array Methods</h4>
           <img
             src="/img/arrowFunctionArrays.png"
             alt="arrowFunctionArrays"
-            style={imageStyles}
+            style={{ ...imageStyles, width: '85%' }}
           />
         </div>
       </Tab>
@@ -106,17 +107,18 @@ const ArrowFunctions = props => (
         <div
           style={{
             marginTop: '25px',
+            marginBottom: '25px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100vh'
+            height: '100%'
           }}
         >
           <h4>Variations</h4>
           <img
             src="/img/arrowFunctionVariations.png"
             alt="arrowFunctionVariations"
-            style={imageStyles}
+            style={{ ...imageStyles, width: '85%' }}
           />
         </div>
       </Tab>
@@ -133,18 +135,18 @@ const ArrowFunctions = props => (
           <img
             src="/img/es5FunctionThis.png"
             alt="es5FunctionThis"
-            style={imageStyles}
+            style={{ ...imageStyles, width: '80%' }}
           />
           <FlatButton
             backgroundColor="#fff"
             onClick={es5Person.showGreetingClick}
             label="Show Greeting"
-            style={{ ...imageStyles, marginTop: '25px' }}
+            style={{ marginTop: '25px' }}
           />
           <img
             src="/img/arrowFunctionThis.png"
             alt="arrowFunctionThis"
-            style={{ ...imageStyles, marginTop: '25px' }}
+            style={{ ...imageStyles, width: '80%', marginTop: '25px' }}
           />
           <FlatButton
             backgroundColor="#fff"

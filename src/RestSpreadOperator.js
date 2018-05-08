@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Arrow from './Arrow';
 
 const imageStyles = {
-  width: '95%',
+  width: '80%',
   margin: '0 auto'
 };
 
@@ -95,6 +95,21 @@ const RestSpreadOperator = props => (
               style={{ ...imageStyles, marginTop: '25px' }}
             />
           )}
+          {props.spreadOperatorTwo &&
+            !props.spreadOperatorThree && (
+              <Arrow
+                onArrowClick={props.showNext}
+                stateName="spreadOperatorThree"
+                style={{ color: 'white', marginTop: '10px' }}
+              />
+            )}
+          {props.spreadOperatorThree && (
+            <img
+              src="/img/spreadOperatorString.png"
+              alt="Rest Function One"
+              style={{ ...imageStyles, marginTop: '25px' }}
+            />
+          )}
         </div>
       </Tab>
       <Tab label="Rest Operator">
@@ -143,7 +158,13 @@ const RestSpreadOperator = props => (
             )}
           {props.restOperatorThree && (
             <div
-              style={{ width: '100%', textAlign: 'center', margin: '0 auto' }}
+              style={{
+                width: '100%',
+                textAlign: 'center',
+                margin: '0 auto',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
             >
               <img
                 src="/img/restArguments.png"
@@ -154,7 +175,7 @@ const RestSpreadOperator = props => (
                 backgroundColor="#fff"
                 onClick={onRestArgumentsClick}
                 label="Run Code"
-                style={{ marginTop: '25px' }}
+                style={{ marginTop: '25px', alignSelf: 'center' }}
               />
             </div>
           )}
@@ -168,7 +189,13 @@ const RestSpreadOperator = props => (
             )}
           {props.restOperatorFour && (
             <div
-              style={{ width: '100%', textAlign: 'center', margin: '0 auto' }}
+              style={{
+                width: '100%',
+                textAlign: 'center',
+                margin: '0 auto',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
             >
               <img
                 src="/img/argumentsReducer.png"
@@ -179,7 +206,7 @@ const RestSpreadOperator = props => (
                 backgroundColor="#fff"
                 onClick={onArgumentsReduceClick}
                 label="Run Code"
-                style={{ marginTop: '25px' }}
+                style={{ marginTop: '25px', alignSelf: 'center' }}
               />
             </div>
           )}
@@ -193,7 +220,13 @@ const RestSpreadOperator = props => (
             )}
           {props.restOperatorFive && (
             <div
-              style={{ width: '100%', textAlign: 'center', marginTop: '25px' }}
+              style={{
+                width: '100%',
+                textAlign: 'center',
+                marginTop: '25px',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
             >
               <img
                 src="/img/reducerWithRest.png"
@@ -204,7 +237,7 @@ const RestSpreadOperator = props => (
                 backgroundColor="#fff"
                 onClick={onRestReduceClick}
                 label="Run Code"
-                style={{ marginTop: '25px' }}
+                style={{ marginTop: '25px', alignSelf: 'center' }}
               />
             </div>
           )}
