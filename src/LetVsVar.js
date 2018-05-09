@@ -9,7 +9,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Arrow from './Arrow';
 
 const imageStyles = {
-  width: '95%',
+  width: '75%',
   margin: '0 auto'
 };
 
@@ -31,17 +31,20 @@ const LetVsVar = props => {
       <Tabs>
         <Tab label="Let vs Var">
           <div style={{ height: '100vh' }}>
-            <h1 style={{ textAlign: 'center' }}>Let vs Var</h1>
-            <div style={{ margin: '0 auto' }}>
-              <ul style={{ listStyle: 'none' }}>
-                <li>
-                  Bindings using var are Function scoped whereas bindings using
-                  let are block scoped
-                </li>
-                <li>var is hoisted</li>
-                <li>Loop bindings</li>
-                <li>What about const?</li>
-              </ul>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <h1>Let vs Var</h1>
+              <img
+                src="/img/letvsvardiff.png"
+                alt="Hoisting and Scoping"
+                style={{ ...imageStyles, marginTop: '10px' }}
+              />
             </div>
           </div>
         </Tab>
