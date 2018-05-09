@@ -6,17 +6,17 @@ import FlatButton from 'material-ui/FlatButton';
 import Arrow from './Arrow';
 
 const imageStyles = {
-  width: '95%',
+  width: '85%',
   margin: '0 auto'
 };
 
-function ArrowFunctionPerson() {
+function Person() {
   this.age = 33;
   this.name = 'Alex Hermundson';
   this.showGreeting = false;
   this.greeting = `Hi my name is ${this.name} and I am ${this.age} years old.`;
   this.showGreetingClick = () => {
-    console.log(this.greeting);
+    console.log(this);
     setTimeout(() => {
       this.hideGreeting();
     }, 2000);
@@ -26,13 +26,12 @@ function ArrowFunctionPerson() {
   };
 }
 
-function Person() {
+function Es5Person() {
   this.age = 33;
   this.name = 'Alex Hermundson';
   this.showGreeting = false;
   this.greeting = `Hi my name is ${this.name} and I am ${this.age} years old.`;
   this.showGreetingClick = function() {
-    console.log(this);
     setTimeout(function() {
       this.hideGreeting(); // => TypeError: this.hideGreeting is not a function
     }, 2000);
@@ -42,9 +41,9 @@ function Person() {
   };
 }
 
-const es5Person = new Person();
+const es5Person = new Es5Person();
 
-const es6Person = new ArrowFunctionPerson();
+const es6Person = new Person();
 
 const ArrowFunctions = props => (
   <div style={{ height: '100%' }}>
@@ -95,7 +94,6 @@ const ArrowFunctions = props => (
             height: '100%'
           }}
         >
-          <h4 style={{ marginTop: '25px' }}>Arrow Function w/ Array Methods</h4>
           <img
             src="/img/arrowFunctionArrays.png"
             alt="arrowFunctionArrays"
@@ -111,14 +109,14 @@ const ArrowFunctions = props => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center',
             height: '100%'
           }}
         >
-          <h4>Variations</h4>
           <img
             src="/img/arrowFunctionVariations.png"
             alt="arrowFunctionVariations"
-            style={{ ...imageStyles, width: '85%' }}
+            style={{ ...imageStyles, width: '75%' }}
           />
         </div>
       </Tab>
@@ -131,11 +129,10 @@ const ArrowFunctions = props => (
             alignItems: 'center'
           }}
         >
-          <h4>Arrow Functions & This</h4>
           <img
             src="/img/es5FunctionThis.png"
             alt="es5FunctionThis"
-            style={{ ...imageStyles, width: '80%' }}
+            style={{ ...imageStyles, width: '70%' }}
           />
           <FlatButton
             backgroundColor="#fff"
@@ -146,7 +143,7 @@ const ArrowFunctions = props => (
           <img
             src="/img/arrowFunctionThis.png"
             alt="arrowFunctionThis"
-            style={{ ...imageStyles, width: '80%', marginTop: '25px' }}
+            style={{ ...imageStyles, width: '70%', marginTop: '25px' }}
           />
           <FlatButton
             backgroundColor="#fff"
@@ -155,10 +152,16 @@ const ArrowFunctions = props => (
             style={{ marginTop: '25px' }}
           />
           <Link
-            to="/arrowFunctions"
-            style={{ color: '#F1F7EE', marginLeft: 'auto' }}
+            to="/restSpreadOperator"
+            style={{
+              color: '#F1F7EE',
+              marginLeft: 'auto',
+              textDecoration: 'none'
+            }}
           >
-            <h4 style={{ marginRight: '15px' }}>Next: Template Literals</h4>
+            <h3 style={{ marginRight: '15px' }}>
+              Next: Rest / Spread Operator
+            </h3>
           </Link>
         </div>
       </Tab>

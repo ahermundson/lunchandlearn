@@ -8,8 +8,15 @@ const imageStyles = {
 
 const Landing = () => (
   <div style={{ height: '100vh' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-      <h2 style={{ textAlign: 'center' }}>ES6 Additions We Will Cover</h2>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <h2 style={{ textAlign: 'center' }}>What We Will Cover</h2>
       <img
         src="/img/whatWellCover.png"
         alt="Rest Function One"
@@ -20,11 +27,12 @@ const Landing = () => (
       style={{
         marginRight: '35px',
         display: 'flex',
+        alignItems: 'flex-end',
         justifyContent: 'flex-end'
       }}
     >
-      <Link to="/letvsvar">
-        <h4 style={{ color: '#F1F7EE' }}>Next: Let vs Var</h4>
+      <Link style={{ textDecoration: 'none' }} to="/ecmascript">
+        <h4 style={{ color: '#F1F7EE' }}>Next: ECMAScript and Process</h4>
       </Link>
     </div>
   </div>

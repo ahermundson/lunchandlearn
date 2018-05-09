@@ -103,6 +103,21 @@ const LetVsVar = props => {
               )}
             {props.hoistingFour && (
               <img
+                src="/img/varBlockScope.png"
+                alt="Hoisting"
+                style={{ ...imageStyles, marginTop: '25px' }}
+              />
+            )}
+            {props.hoistingFour &&
+              !props.hoistingFive && (
+                <Arrow
+                  onArrowClick={props.showNext}
+                  stateName="hoistingFive"
+                  style={{ color: 'white', marginTop: '10px' }}
+                />
+              )}
+            {props.hoistingFive && (
+              <img
                 src="/img/letBlockScope.png"
                 alt="Hoisting"
                 style={{ ...imageStyles, marginTop: '25px' }}
@@ -217,9 +232,13 @@ const LetVsVar = props => {
           </div>
           <Link
             to="/arrowFunctions"
-            style={{ color: '#F1F7EE', textAlign: 'right' }}
+            style={{
+              color: '#F1F7EE',
+              textAlign: 'right',
+              textDecoration: 'none'
+            }}
           >
-            <h4 style={{ marginRight: '15px' }}>Next: Arrow Functions</h4>
+            <h3 style={{ marginRight: '15px' }}>Next: Arrow Functions</h3>
           </Link>
         </Tab>
       </Tabs>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
+import { Link } from 'react-router-dom';
+import Arrow from './Arrow';
 import FlatButton from 'material-ui/FlatButton';
 
 const imageStyles = {
@@ -41,7 +43,7 @@ const onFunctionInTemplateTagClick = () => {
     console.log('Function was executed')}`;
 };
 
-const TemplateLiterals = () => (
+const TemplateLiterals = props => (
   <div style={{ height: '100%' }}>
     <Tabs>
       <Tab label="Syntax">
@@ -51,21 +53,44 @@ const TemplateLiterals = () => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100%'
+            height: '1000px'
           }}
         >
-          <h4>ES5</h4>
+          <h3>ES5</h3>
           <img
             src="/img/es5StringConcat.png"
             alt="ES5 String Concat"
             style={imageStyles}
           />
-          <h4 style={{ marginTop: '10px' }}>ES6</h4>
-          <img
-            src="/img/es6StringConcat.png"
-            alt="ES6 String Concat"
-            style={imageStyles}
-          />
+          {!props.templateLiteralTwo && (
+            <Arrow
+              onArrowClick={props.showNext}
+              stateName="templateLiteralTwo"
+              style={{
+                color: 'white',
+                marginTop: '10px',
+                marginBottom: '15px'
+              }}
+            />
+          )}
+          {props.templateLiteralTwo && (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <h3 style={{ marginTop: '10px' }}>ES6</h3>
+              <img
+                src="/img/es6StringConcat.png"
+                alt="ES6 String Concat"
+                style={imageStyles}
+              />
+            </div>
+          )}
         </div>
       </Tab>
       <Tab label="Usage">
@@ -75,7 +100,7 @@ const TemplateLiterals = () => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100%'
+            height: '2000px'
           }}
         >
           <img
@@ -83,22 +108,59 @@ const TemplateLiterals = () => (
             alt="ES6 String Concat"
             style={imageStyles}
           />
-          <img
-            src="/img/templateLiteralMultiLine.png"
-            alt="ES6 String Concat"
-            style={{ ...imageStyles, marginTop: '25px' }}
-          />
-          <img
-            src="/img/templateLiteralHtml.png"
-            alt="ES6 String Concat"
-            style={{ ...imageStyles, marginTop: '25px' }}
-          />
-          <FlatButton
-            backgroundColor="#fff"
-            onClick={onHtmlClick}
-            label="Run Code"
-            style={{ marginTop: '25px', marginBottom: '25px' }}
-          />
+          {!props.templateLiteralThree && (
+            <Arrow
+              onArrowClick={props.showNext}
+              stateName="templateLiteralThree"
+              style={{
+                color: 'white',
+                marginTop: '10px',
+                marginBottom: '15px'
+              }}
+            />
+          )}
+          {props.templateLiteralThree && (
+            <img
+              src="/img/templateLiteralMultiLine.png"
+              alt="ES6 String Concat"
+              style={{ ...imageStyles, marginTop: '25px' }}
+            />
+          )}
+          {!props.templateLiteralFour &&
+            props.templateLiteralThree && (
+              <Arrow
+                onArrowClick={props.showNext}
+                stateName="templateLiteralFour"
+                style={{
+                  color: 'white',
+                  marginTop: '10px',
+                  marginBottom: '15px'
+                }}
+              />
+            )}
+          {props.templateLiteralFour && (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <img
+                src="/img/templateLiteralHtml.png"
+                alt="ES6 String Concat"
+                style={{ ...imageStyles, marginTop: '25px' }}
+              />
+              <FlatButton
+                backgroundColor="#fff"
+                onClick={onHtmlClick}
+                label="Run Code"
+                style={{ marginTop: '25px', marginBottom: '25px' }}
+              />
+            </div>
+          )}
         </div>
       </Tab>
       <Tab label="Template Tag">
@@ -108,7 +170,7 @@ const TemplateLiterals = () => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100%'
+            height: '2000px'
           }}
         >
           <img
@@ -116,33 +178,119 @@ const TemplateLiterals = () => (
             alt="ES6 String Concat"
             style={imageStyles}
           />
-          <img
-            src="/img/templateTagFunctionExample.png"
-            alt="ES6 String Concat"
-            style={{ ...imageStyles, marginTop: '25px' }}
-          />
-          <FlatButton
-            backgroundColor="#fff"
-            onClick={onTemplateTagFuncionClick}
-            label="Run Code"
-            style={{ marginTop: '25px' }}
-          />
-          <img
-            src="/img/functionInTemplateTag.png"
-            alt="ES6 String Concat"
-            style={{ ...imageStyles, marginTop: '25px' }}
-          />
-          <FlatButton
-            backgroundColor="#fff"
-            onClick={onFunctionInTemplateTagClick}
-            label="Run Code"
-            style={{ marginTop: '25px' }}
-          />
-          <img
-            src="/img/styleComponent.png"
-            alt="ES6 String Concat"
-            style={{ ...imageStyles, marginTop: '25px', marginBottom: '25px' }}
-          />
+          {!props.templateTagTwo && (
+            <Arrow
+              onArrowClick={props.showNext}
+              stateName="templateTagTwo"
+              style={{
+                color: 'white',
+                marginTop: '10px',
+                marginBottom: '15px'
+              }}
+            />
+          )}
+          {props.templateTagTwo && (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <img
+                src="/img/templateTagFunctionExample.png"
+                alt="ES6 String Concat"
+                style={{ ...imageStyles, marginTop: '25px' }}
+              />
+              <FlatButton
+                backgroundColor="#fff"
+                onClick={onTemplateTagFuncionClick}
+                label="Run Code"
+                style={{ marginTop: '25px' }}
+              />
+            </div>
+          )}
+          {!props.templateTagThree &&
+            props.templateTagTwo && (
+              <Arrow
+                onArrowClick={props.showNext}
+                stateName="templateTagThree"
+                style={{
+                  color: 'white',
+                  marginTop: '10px',
+                  marginBottom: '15px'
+                }}
+              />
+            )}
+          {props.templateTagThree && (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <img
+                src="/img/functionInTemplateTag.png"
+                alt="ES6 String Concat"
+                style={{ ...imageStyles, marginTop: '25px' }}
+              />
+              <FlatButton
+                backgroundColor="#fff"
+                onClick={onFunctionInTemplateTagClick}
+                label="Run Code"
+                style={{ marginTop: '25px' }}
+              />
+            </div>
+          )}
+          {!props.templateTagFour &&
+            props.templateTagThree && (
+              <Arrow
+                onArrowClick={props.showNext}
+                stateName="templateTagFour"
+                style={{
+                  color: 'white',
+                  marginTop: '10px',
+                  marginBottom: '15px'
+                }}
+              />
+            )}
+          {props.templateTagFour && (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <img
+                src="/img/styledComponent.png"
+                alt="ES6 String Concat"
+                style={{
+                  ...imageStyles,
+                  marginTop: '25px',
+                  marginBottom: '25px'
+                }}
+              />
+              <Link
+                to="/thanks"
+                style={{
+                  color: '#F1F7EE',
+                  textAlign: 'right',
+                  textDecoration: 'none',
+                  alignSelf: 'flex-end'
+                }}
+              >
+                <h3 style={{ marginRight: '35px' }}>Thanks!</h3>
+              </Link>
+            </div>
+          )}
         </div>
       </Tab>
     </Tabs>

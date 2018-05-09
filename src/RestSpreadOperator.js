@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router-dom';
 import Arrow from './Arrow';
 
 const imageStyles = {
@@ -48,16 +49,16 @@ const RestSpreadOperator = props => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100vh'
+            height: '2000px'
           }}
         >
-          <h4>Spread Operator</h4>
+          <h3>Spread Operator</h3>
           <img
             src="/img/spreadSyntax.png"
             alt="Spread Operator Syntax"
             style={imageStyles}
           />
-          <h4 style={{ marginTop: '10px' }}>Rest Operator</h4>
+          <h3 style={{ marginTop: '25px' }}>Rest Operator</h3>
           <img
             src="/img/restSyntax.png"
             alt="Spread Operator Syntax"
@@ -73,7 +74,7 @@ const RestSpreadOperator = props => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100%'
+            height: '1900px'
           }}
         >
           <img
@@ -107,7 +108,30 @@ const RestSpreadOperator = props => (
             <img
               src="/img/spreadOperatorString.png"
               alt="Rest Function One"
-              style={{ ...imageStyles, marginTop: '25px' }}
+              style={{
+                ...imageStyles,
+                marginTop: '25px',
+                marginBottom: '25px'
+              }}
+            />
+          )}
+          {props.spreadOperatorThree &&
+            !props.spreadOperatorFour && (
+              <Arrow
+                onArrowClick={props.showNext}
+                stateName="spreadOperatorFour"
+                style={{ color: 'white', marginTop: '10px' }}
+              />
+            )}
+          {props.spreadOperatorFour && (
+            <img
+              src="/img/spreadOperatorMath.png"
+              alt="Rest Function One"
+              style={{
+                ...imageStyles,
+                marginTop: '25px',
+                marginBottom: '25px'
+              }}
             />
           )}
         </div>
@@ -120,7 +144,7 @@ const RestSpreadOperator = props => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100%'
+            height: '3000px'
           }}
         >
           <img
@@ -265,11 +289,30 @@ const RestSpreadOperator = props => (
               />
             )}
           {props.restOperatorSeven && (
-            <img
-              src="/img/restErrorFunction.png"
-              alt="Rest Function One"
-              style={{ ...imageStyles, marginTop: '25px' }}
-            />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%'
+              }}
+            >
+              <img
+                src="/img/restErrorFunction.png"
+                alt="Rest Function One"
+                style={{ ...imageStyles, marginTop: '25px' }}
+              />
+              <Link
+                to="/destructuring"
+                style={{
+                  color: '#F1F7EE',
+                  textAlign: 'right',
+                  textDecoration: 'none',
+                  alignSelf: 'flex-end'
+                }}
+              >
+                <h3 style={{ marginRight: '35px' }}>Next: Destructuring</h3>
+              </Link>
+            </div>
           )}
         </div>
       </Tab>

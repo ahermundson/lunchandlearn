@@ -8,6 +8,8 @@ import ArrowFunctions from './ArrowFunctions';
 import RestSpreadOperartor from './RestSpreadOperator';
 import TemplateLiterals from './TemplateLiterals';
 import Destructuring from './Destructuring';
+import ECMAScript from './EcmaScript';
+import Thanks from './Thanks';
 import './App.css';
 
 const muiTheme = getMuiTheme({
@@ -28,6 +30,7 @@ class App extends Component {
       hoistingTwo: false,
       hoistingThree: false,
       hoistingFour: false,
+      hoistingFive: false,
       constTwo: false,
       redeclarationTwo: false,
       arrowSyntaxTwo: false,
@@ -37,7 +40,34 @@ class App extends Component {
       restOperatorSix: false,
       restOperatorSeven: false,
       spreadOperatorTwo: false,
-      spreadOperatorThree: false
+      spreadOperatorThree: false,
+      spreadOperatorFour: false,
+      destructSyntaxTwo: false,
+      destructSyntaxThree: false,
+      destructSyntaxFour: false,
+      destructSyntaxFive: false,
+      destructSyntaxSix: false,
+      destructSyntaxSeven: false,
+      destructParamTwo: false,
+      destructParamThree: false,
+      destructParamFour: false,
+      destructParamFive: false,
+      destructArrayTwo: false,
+      templateLiteralTwo: false,
+      templateLiteralThree: false,
+      templateLiteralFour: false,
+      templateTagTwo: false,
+      templateTagThree: false,
+      templateTagFour: false,
+      ecmaTwo: false,
+      ecmaThree: false,
+      ecmaFour: false,
+      ecmaFive: false,
+      ecmaHistorySix: false,
+      ecmaHistoryFive: false,
+      ecmaHistoryFour: false,
+      ecmaHistoryThree: false,
+      ecmaHistoryTwo: false
     };
     this.showNext = this.showNext.bind(this);
   }
@@ -67,6 +97,7 @@ class App extends Component {
                     hoistingTwo={this.state.hoistingTwo}
                     hoistingThree={this.state.hoistingThree}
                     hoistingFour={this.state.hoistingFour}
+                    hoistingFive={this.state.hoistingFive}
                     constTwo={this.state.constTwo}
                     redeclarationTwo={this.state.redeclarationTwo}
                   />
@@ -94,14 +125,62 @@ class App extends Component {
                     restOperatorSeven={this.state.restOperatorSeven}
                     spreadOperatorTwo={this.state.spreadOperatorTwo}
                     spreadOperatorThree={this.state.spreadOperatorThree}
+                    spreadOperatorFour={this.state.spreadOperatorFour}
                   />
                 )}
               />
               <Route
                 path="/templateLiterals"
-                render={() => <TemplateLiterals />}
+                render={() => (
+                  <TemplateLiterals
+                    showNext={this.showNext}
+                    templateLiteralTwo={this.state.templateLiteralTwo}
+                    templateLiteralThree={this.state.templateLiteralThree}
+                    templateLiteralFour={this.state.templateLiteralFour}
+                    templateTagTwo={this.state.templateTagTwo}
+                    templateTagThree={this.state.templateTagThree}
+                    templateTagFour={this.state.templateTagFour}
+                  />
+                )}
               />
-              <Route path="/destructuring" render={() => <Destructuring />} />
+              <Route
+                path="/destructuring"
+                render={() => (
+                  <Destructuring
+                    showNext={this.showNext}
+                    destructSyntaxTwo={this.state.destructSyntaxTwo}
+                    destructSyntaxThree={this.state.destructSyntaxThree}
+                    destructSyntaxFour={this.state.destructSyntaxFour}
+                    destructSyntaxFive={this.state.destructSyntaxFive}
+                    destructSyntaxSix={this.state.destructSyntaxSix}
+                    destructSyntaxSeven={this.state.destructSyntaxSeven}
+                    destructParamTwo={this.state.destructParamTwo}
+                    destructParamThree={this.state.destructParamThree}
+                    destructParamFour={this.state.destructParamFour}
+                    destructParamFive={this.state.destructParamFive}
+                    destructParamSix={this.state.destructParamSix}
+                    destructArrayTwo={this.state.destructArrayTwo}
+                  />
+                )}
+              />
+              <Route
+                path="/ecmascript"
+                render={() => (
+                  <ECMAScript
+                    showNext={this.showNext}
+                    ecmaTwo={this.state.ecmaTwo}
+                    ecmaThree={this.state.ecmaThree}
+                    ecmaFour={this.state.ecmaFour}
+                    ecmaFive={this.state.ecmaFive}
+                    ecmaHistoryTwo={this.state.ecmaHistoryTwo}
+                    ecmaHistoryThree={this.state.ecmaHistoryThree}
+                    ecmaHistoryFour={this.state.ecmaHistoryFour}
+                    ecmaHistoryFive={this.state.ecmaHistoryFive}
+                    ecmaHistorySix={this.state.ecmaHistorySix}
+                  />
+                )}
+              />
+              <Route path="/thanks" render={() => <Thanks />} />
             </div>
           </HashRouter>
         </div>
