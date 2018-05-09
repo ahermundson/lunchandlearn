@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const imageStyles = {
+  width: '65%',
+  margin: '0 auto'
+};
+
 const Landing = () => (
-  <div>
-    <ul style={{ listStyleType: 'none' }}>
-      <h3>ES6 Additions We Will Cover</h3>
-      <li>Let and const</li>
-      <li>Arrow functions</li>
-      <li>Spread operator</li>
-      <li>Object destructuring</li>
-      <li>ES6 Modules</li>
-    </ul>
+  <div style={{ height: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <h2 style={{ textAlign: 'center' }}>ES6 Additions We Will Cover</h2>
+      <img
+        src="/img/whatWellCover.png"
+        alt="Rest Function One"
+        style={{ ...imageStyles, marginTop: '25px' }}
+      />
+    </div>
     <div
       style={{
         marginRight: '35px',
@@ -19,7 +24,7 @@ const Landing = () => (
       }}
     >
       <Link to="/letvsvar">
-        <h4 style={{ color: '#F1F7EE' }}>Start</h4>
+        <h4 style={{ color: '#F1F7EE' }}>Next: Let vs Var</h4>
       </Link>
     </div>
   </div>

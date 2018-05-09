@@ -7,6 +7,7 @@ import LetVsVar from './LetVsVar';
 import ArrowFunctions from './ArrowFunctions';
 import RestSpreadOperartor from './RestSpreadOperator';
 import TemplateLiterals from './TemplateLiterals';
+import Destructuring from './Destructuring';
 import './App.css';
 
 const muiTheme = getMuiTheme({
@@ -100,6 +101,7 @@ class App extends Component {
                 path="/templateLiterals"
                 render={() => <TemplateLiterals />}
               />
+              <Route path="/destructuring" render={() => <Destructuring />} />
             </div>
           </HashRouter>
         </div>
