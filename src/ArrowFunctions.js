@@ -86,12 +86,12 @@ const ArrowFunctions = props => (
       <Tab label="Arrow Function w/ Array Methods">
         <div
           style={{
-            marginTop: '10px',
-            marginBottom: '25px',
+            margin: '25px auto 25px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '100%'
+            height: '100%',
+            width: '75%'
           }}
         >
           <img
@@ -104,13 +104,13 @@ const ArrowFunctions = props => (
       <Tab label="Variations">
         <div
           style={{
-            marginTop: '25px',
-            marginBottom: '25px',
+            margin: '25px auto 25px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            height: '100%'
+            height: '100%',
+            width: '75%'
           }}
         >
           <img
@@ -123,10 +123,11 @@ const ArrowFunctions = props => (
       <Tab label="This">
         <div
           style={{
-            marginTop: '25px',
+            margin: '25px auto 25px',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            width: '85%'
           }}
         >
           <img
@@ -159,9 +160,7 @@ const ArrowFunctions = props => (
               textDecoration: 'none'
             }}
           >
-            <h3 style={{ marginRight: '15px' }}>
-              Next: Rest / Spread Operator
-            </h3>
+            <h3>Next: Rest / Spread Operator</h3>
           </Link>
         </div>
       </Tab>

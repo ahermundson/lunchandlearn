@@ -132,7 +132,7 @@ const LetVsVar = props => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              height: '100vh'
+              height: '2000px'
             }}
           >
             <h2>Let vs Var / Let Within Loops</h2>
@@ -213,7 +213,7 @@ const LetVsVar = props => {
             <img
               src="/img/redeclarationError.png"
               alt="redeclarationError"
-              style={imageStyles}
+              style={{ ...imageStyles, width: '95%' }}
             />
             {!props.redeclarationTwo && (
               <Arrow
@@ -224,7 +224,7 @@ const LetVsVar = props => {
             )}
             {props.redeclarationTwo && (
               <img
-                style={{ ...imageStyles, marginTop: '25px' }}
+                style={{ ...imageStyles, marginTop: '25px', width: '95%' }}
                 src="/img/redeclarationNoError.png"
                 alt="redeclarationNoError"
               />

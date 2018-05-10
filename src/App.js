@@ -73,7 +73,7 @@ class App extends Component {
   }
 
   showNext(stateName) {
-    console.log(stateName);
+    // console.log(stateName);
     this.setState({
       [stateName]: true
     });
