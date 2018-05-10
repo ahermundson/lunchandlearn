@@ -144,7 +144,7 @@ const RestSpreadOperator = props => (
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            height: '3000px'
+            height: '3500px'
           }}
         >
           <img
@@ -252,6 +252,11 @@ const RestSpreadOperator = props => (
                 flexDirection: 'column'
               }}
             >
+              <img
+                src="/img/restSyntax.png"
+                alt="Spread Operator Syntax"
+                style={{ ...imageStyles, marginTop: '25px' }}
+              />
               <img
                 src="/img/reducerWithRest.png"
                 alt="Rest Function One"

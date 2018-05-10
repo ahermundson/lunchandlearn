@@ -9,7 +9,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Arrow from './Arrow';
 
 const imageStyles = {
-  width: '75%',
+  width: '85%',
   margin: '0 auto'
 };
 
@@ -55,7 +55,7 @@ const LetVsVar = props => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              height: '1500px'
+              height: '2500px'
             }}
           >
             <h2>Let vs Var / Hoisting and Scoping</h2>
